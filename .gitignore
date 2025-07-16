@@ -1,0 +1,11 @@
+# PHP dependencies
+/vendor/
+
+# IDE, OS
+.idea/
+.vscode/
+*.log
+*.cache
+
+# PHPUnit cache
+.phpunit.result.cache
