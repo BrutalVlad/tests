@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="C:\OSPanel\domains\ApiTest\phpunit.xml" tests="11" assertions="26" errors="0" failures="3" skipped="0" time="11.512128">
+    <testsuite name="Positive" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="2.498529">
+      <testsuite name="Tests\Positive\RegisterSuccessTest" file="C:\OSPanel\domains\ApiTest\tests\Positive\RegisterSuccessTest.php" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="2.498529">
+        <testcase name="testSuccessfulRegistration" file="C:\OSPanel\domains\ApiTest\tests\Positive\RegisterSuccessTest.php" line="12" class="Tests\Positive\RegisterSuccessTest" classname="Tests.Positive.RegisterSuccessTest" assertions="2" time="2.498529">
+          <system-out>
+=== RESPONSE BODY ===
+{"login_link":"https:\/\/go.dev-01.ru\/login_check?user=ivanov4412@example.com\u0026expires=1752746288\u0026hash=fCRooAFoDGfSL-HVsmRQWFc-CaBU09mBIzExWsPXsr0~38Wh-oB4j-gDj3s06-usLBqqhymJYqHuf0hb8R3P0O0~"}
+=====================
+</system-out>
+        </testcase>
+      </testsuite>
+    </testsuite>
+    <testsuite name="ValidationErrors" tests="10" assertions="24" errors="0" failures="3" skipped="0" time="9.013599">
+      <testsuite name="Tests\ValidationErrors\InvalidFormatTest" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\InvalidFormatTest.php" tests="3" assertions="3" errors="0" failures="3" skipped="0" time="3.853276">
+        <testcase name="testInvalidEmailFormat" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\InvalidFormatTest.php" line="18" class="Tests\ValidationErrors\InvalidFormatTest" classname="Tests.ValidationErrors.InvalidFormatTest" assertions="1" time="0.621108">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\ValidationErrors\InvalidFormatTest::testInvalidEmailFormat&#13;
+Expected 400 for invalid email format. Body:
+{"reason":"\u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0441 \u0442\u0430\u043a\u0438\u043c email \u0443\u0436\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d"}
+Failed asserting that 409 matches expected 400.
+&#13;
+C:\OSPanel\domains\ApiTest\tests\ValidationErrors\InvalidFormatTest.php:34</failure>
+        </testcase>
+        <testcase name="testInvalidPhoneFormat" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\InvalidFormatTest.php" line="56" class="Tests\ValidationErrors\InvalidFormatTest" classname="Tests.ValidationErrors.InvalidFormatTest" assertions="1" time="0.580964">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\ValidationErrors\InvalidFormatTest::testInvalidPhoneFormat&#13;
+Expected 400 for invalid phone format. Body:
+{"reason":"\u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0441 \u0442\u0430\u043a\u0438\u043c email \u0443\u0436\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d"}
+Failed asserting that 409 matches expected 400.
+&#13;
+C:\OSPanel\domains\ApiTest\tests\ValidationErrors\InvalidFormatTest.php:72</failure>
+        </testcase>
+        <testcase name="testShortPassword" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\InvalidFormatTest.php" line="94" class="Tests\ValidationErrors\InvalidFormatTest" classname="Tests.ValidationErrors.InvalidFormatTest" assertions="1" time="2.651203">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\ValidationErrors\InvalidFormatTest::testShortPassword&#13;
+Expected 400 for short password. Body:
+{"login_link":"https:\/\/go.dev-01.ru\/login_check?user=user256@example.com\u0026expires=1752746292\u0026hash=lrwewzU2O_3jtTMQ24XZGI1s-DCzshap6Nl4axw-Or8~gP4ysME8kfRSI47bg-geIo0NM1aGqw8w8CurjihlHdk~"}
+Failed asserting that 201 matches expected 400.
+&#13;
+C:\OSPanel\domains\ApiTest\tests\ValidationErrors\InvalidFormatTest.php:110</failure>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\ValidationErrors\MissingFieldsTest" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\MissingFieldsTest.php" tests="7" assertions="21" errors="0" failures="0" skipped="0" time="5.160323">
+        <testsuite name="Tests\ValidationErrors\MissingFieldsTest::testMissingFieldReturns400" tests="7" assertions="21" errors="0" failures="0" skipped="0" time="5.160323">
+          <testcase name="testMissingFieldReturns400 with data set &quot;missing_name&quot;" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\MissingFieldsTest.php" line="16" class="Tests\ValidationErrors\MissingFieldsTest" classname="Tests.ValidationErrors.MissingFieldsTest" assertions="3" time="0.591963"/>
+          <testcase name="testMissingFieldReturns400 with data set &quot;missing_surname&quot;" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\MissingFieldsTest.php" line="16" class="Tests\ValidationErrors\MissingFieldsTest" classname="Tests.ValidationErrors.MissingFieldsTest" assertions="3" time="0.548222"/>
+          <testcase name="testMissingFieldReturns400 with data set &quot;missing_phone&quot;" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\MissingFieldsTest.php" line="16" class="Tests\ValidationErrors\MissingFieldsTest" classname="Tests.ValidationErrors.MissingFieldsTest" assertions="3" time="0.591887"/>
+          <testcase name="testMissingFieldReturns400 with data set &quot;missing_email&quot;" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\MissingFieldsTest.php" line="16" class="Tests\ValidationErrors\MissingFieldsTest" classname="Tests.ValidationErrors.MissingFieldsTest" assertions="3" time="0.591083"/>
+          <testcase name="testMissingFieldReturns400 with data set &quot;missing_address&quot;" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\MissingFieldsTest.php" line="16" class="Tests\ValidationErrors\MissingFieldsTest" classname="Tests.ValidationErrors.MissingFieldsTest" assertions="3" time="1.689546"/>
+          <testcase name="testMissingFieldReturns400 with data set &quot;missing_refovod_code&quot;" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\MissingFieldsTest.php" line="16" class="Tests\ValidationErrors\MissingFieldsTest" classname="Tests.ValidationErrors.MissingFieldsTest" assertions="3" time="0.558099"/>
+          <testcase name="testMissingFieldReturns400 with data set &quot;missing_password&quot;" file="C:\OSPanel\domains\ApiTest\tests\ValidationErrors\MissingFieldsTest.php" line="16" class="Tests\ValidationErrors\MissingFieldsTest" classname="Tests.ValidationErrors.MissingFieldsTest" assertions="3" time="0.589522"/>
+        </testsuite>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

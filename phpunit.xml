@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php"
-         colors="true">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache">
+
     <testsuites>
-        <testsuite name="Integration Tests">
-            <directory>tests</directory>
+        <testsuite name="Positive">
+            <directory>tests/Positive</directory>
+        </testsuite>
+        <testsuite name="ValidationErrors">
+            <directory>tests/ValidationErrors</directory>
+        </testsuite>
+        <testsuite name="Duplicate">
+            <directory>tests/Duplicate</directory>
         </testsuite>
     </testsuites>
-    <logging>
-        <log type="teamcity" target="php://stdout"/>
-    </logging>
+
+    <!--Включить логирование по мере надобности-->
+    <!--<logging>
+        <junit outputFile="build/logs/junit.xml"/>
+        <teamcity outputFile="php://stdout"/>
+    </logging>-->
+
 </phpunit>
