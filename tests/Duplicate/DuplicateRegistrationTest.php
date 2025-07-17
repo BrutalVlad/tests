@@ -24,7 +24,7 @@ class DuplicateRegistrationTest extends BaseApiTest
         $response = $this->request('POST', 'account/register', $payload);
         $body = (string)$response->getBody();
 
-        // Ожидаем код ошибки (400 или 409, уточни по API)
+        // Ожидаем код ошибки 400 (но это не точно)
         $this->assertGreaterThanOrEqual(
             400,
             $response->getStatusCode(),
